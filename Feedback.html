@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html>
  <head>
@@ -7,27 +8,27 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lusitana&display=swap" rel="stylesheet"> <!-- font-->
   <title>Feedback</title>
-  <link rel="stylesheet" href="https://raw.githubusercontent.com/EvaOg/talisman_reisen/main/style.css">
- <style type="text/css">
+ <style>
      body{
   font-size: 18px; 
   font-family: 'Lusitana', serif;
 }
+
      .feedback{
     width: 100%;
-    max-width: 780px;
+    max-width: 950px;
     background: #fff;
     margin: 0 auto;
-    padding: 15px;
+    padding: 100px;
     box-shadow: 1px 1px 16px rgba(0, 0, 0, 0.3);
 }
 
 .survey-hr{
   margin:10px 0;
-  color:#5282bd;
+  border: .5px solid #ddd;
 }
 
-     .star-rating {
+   .star-rating {
    margin: 25px 0 0px;
   font-size: 0;
   white-space: nowrap;
@@ -39,8 +40,7 @@
   background: url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cG9seWdvbiBmaWxsPSIjREREREREIiBwb2ludHM9IjEwLDAgMTMuMDksNi41ODMgMjAsNy42MzkgMTUsMTIuNzY0IDE2LjE4LDIwIDEwLDE2LjU4MyAzLjgyLDIwIDUsMTIuNzY0IDAsNy42MzkgNi45MSw2LjU4MyAiLz48L3N2Zz4=');
   background-size: contain;
 }
-
-     .star-rating i {
+   .star-rating i {
   opacity: 0;
   position: absolute;
   left: 0;
@@ -51,8 +51,7 @@
   background: url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cG9seWdvbiBmaWxsPSIjRkZERjg4IiBwb2ludHM9IjEwLDAgMTMuMDksNi41ODMgMjAsNy42MzkgMTUsMTIuNzY0IDE2LjE4LDIwIDEwLDE2LjU4MyAzLjgyLDIwIDUsMTIuNzY0IDAsNy42MzkgNi45MSw2LjU4MyAiLz48L3N2Zz4=');
   background-size: contain;
 }
-
-     .star-rating input {
+   .star-rating input {
   -moz-appearance: none;
   -webkit-appearance: none;
   opacity: 0;
@@ -64,91 +63,87 @@
   z-index: 2;
   position: relative;
 }
-
-     .star-rating input:hover + i,
-     .star-rating input:checked + i {
+   .star-rating input:hover + i,
+.star-rating input:checked + i {
   opacity: 1;
 }
-
-     .star-rating i ~ i {
+.star-rating i ~ i {
   width: 40%;
 }
-
-     .star-rating i ~ i ~ i {
+.star-rating i ~ i ~ i {
   width: 60%;
 }
-
-     .star-rating i ~ i ~ i ~ i {
+.star-rating i ~ i ~ i ~ i {
   width: 80%;
 }
-
-     .star-rating i ~ i ~ i ~ i ~ i {
+.star-rating i ~ i ~ i ~ i ~ i {
   width: 100%;
 }
-
-     .star-rating input {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  opacity: 0;
-  display: inline-block;
-  width: 20%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  z-index: 2;
-  position: relative;
+   .choice {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 20px;
+  display: block;
 }
-
-     span.scale-rating {
-    margin: 5px 0 15px;
+   
+span.scale-rating{
+margin: 5px 0 15px;
     display: inline-block;
     width: 100%;
+  
 }
-
-     span.scale-rating>label {
-    color:#5282bd;
+   
+span.scale-rating>label {
   position:relative;
     -webkit-appearance: none;
   outline:0 !important;
-    border: 1px solid #5282bd;
+    border: 1px solid grey;
     height:33px;
     margin: 0 5px 0 0;
   width: calc(10% - 7px);
     float: left;
   cursor:pointer;
 }
-
-     span.scale-rating input[type=radio] {
-    position:absolute;
+   span.scale-rating label {
+  position:relative;
     -webkit-appearance: none;
-    opacity:0;
-    outline:0 !important;
+  outline:0 !important;
+    height:33px;    
+    margin: 0 5px 0 0;
+  width: calc(10% - 7px);
+    float: left;
+  cursor:pointer;
+}
+   span.scale-rating input[type=radio] {
+  position:absolute;
+    -webkit-appearance: none;
+  opacity:0;
+  outline:0 !important;
+    /*border-right: 1px solid grey;*/
     height:33px;
     margin: 0 5px 0 0;
-    width: 100%;
+  width: 100%;
     float: left;
-    cursor:pointer;
-    z-index:3;
-    background:#5282bd !important;
+  cursor:pointer;
+  z-index:3;
 }
-
-     span.scale-rating label:hover {
-   background:#fddf8d;
+span.scale-rating label:hover{
+background:#fddf8d;
 }
-
-     span.scale-rating input[type=radio]:last-child {
-   border-right:0;
-   background:#5282bd !important;
+span.scale-rating input[type=radio]:last-child{
+border-right:0;
 }
-
-     span.scale-rating label input[type=radio]:checked ~ label {
+span.scale-rating label input[type=radio]:checked ~ label{
     -webkit-appearance: none;
     margin: 0;
-    background-color:#5282bd;
-     }
-
-     span.scale-rating label:before {
-    content:attr(value);
+  background:#fddf8d !important;
+}
+span.scale-rating label:before
+{
+  content:attr(value);
     top: 7px;
     width: 100%;
     position: absolute;
@@ -156,9 +151,8 @@
     right: 0;
     text-align: center;
     vertical-align: middle;
-    z-index:3;
-}
-     
+  z-index:2;
+}    
  </style>
  </head>
   
@@ -177,7 +171,8 @@ wir hoffen, dass Ihnen Ihre Reise nach Russland gefallen hat! Damit wir Ihnen zu
  </div> 
   
 <form method="post" action="#action-url">
-<label>1. Wir wurden höflich und professionell bedient.</label><br>
+    
+<label>1. Wir wurden höflich und professionell bedient.(1 Sterne - nein, 5 Sterne - ja)</label><br>
 <span class="star-rating">
   Nein
   <input type="radio" name="rating1" value="1"><i></i>
@@ -190,16 +185,16 @@ wir hoffen, dass Ihnen Ihre Reise nach Russland gefallen hat! Damit wir Ihnen zu
  
   <div class="clear"></div> 
   <hr class="survey-hr">
-<label>2. Wir haben alle notwendigen Informationen zurzeit bekommen.</label><br>
+<label>2. Wir haben alle notwendigen Informationen zurzeit bekommen.(1 Sterne - nein, 5 Sterne - ja)</label><br>
 <span class="star-rating">
-  Nein
+  <div>nein</div>
   <input type="radio" name="rating2" value="1"><i></i>
   <input type="radio" name="rating2" value="2"><i></i>
   <input type="radio" name="rating2" value="3"><i></i>
   <input type="radio" name="rating2" value="4"><i></i>
   <input type="radio" name="rating2" value="5"><i></i>
-  Ja
 </span>
+
 
 
 <div class="clear"></div> 
@@ -264,18 +259,22 @@ wir hoffen, dass Ihnen Ihre Reise nach Russland gefallen hat! Damit wir Ihnen zu
 <textarea cols="75" name="commentText" rows="5" style="100%"></textarea><br>
 <br>
   <div class="clear"></div> 
-<input style="background:#5282bd;color:#fff;padding:12px;border:0;border-radius:30px;font-size:18px;font-family:'Lusitana',serif;" type="submit" value="Feedback teilen"> 
+<input a href="#sendmyform" style="background:#5282bd;color:#fff;padding:12px;border:0;border-radius:30px;font-size:18px;font-family:'Lusitana',serif;" type="submit" value="Feedback teilen"> 
+
+<div>
+
+<?
+
+$headers = "From: from@webhookservesite.ru";
+ $message = print_r($_POST,true);
+ @mail('to@mail.ru', 'Tilda TEST', $message, $headers);
+
+echo"ok";
+
+?>
+
+</div>
 </form>
 </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
